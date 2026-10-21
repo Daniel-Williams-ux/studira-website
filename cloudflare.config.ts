@@ -1,5 +1,8 @@
 import { bindings, defineConfig, defineWorker } from "cf/config";
 
+const formspreeContactEndpoint =
+  process.env.NEXT_PUBLIC_FORMSPREE_CONTACT_ENDPOINT ?? "";
+
 export default defineConfig({
   worker: defineWorker({
     name: "studira-website",
@@ -17,6 +20,13 @@ export default defineConfig({
     env: {
       ASSETS: bindings.assets(),
       IMAGES: bindings.images(),
+      ...(formspreeContactEndpoint
+        ? {
+            NEXT_PUBLIC_FORMSPREE_CONTACT_ENDPOINT: bindings.text(
+              formspreeContactEndpoint,
+            ),
+          }
+        : {}),
     },
   }),
 });
