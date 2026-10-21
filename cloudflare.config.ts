@@ -11,6 +11,9 @@ export default defineConfig({
       notFoundHandling: "none",
       runWorkerFirst: ["/*", "!/_next/static/*", "!/*/_next/static/*"],
     },
+    domains: ["studirasystems.com", "www.studirasystems.com"],
+    workersDev: true,
+    previewUrls: true,
     env: {
       ASSETS: bindings.assets(),
       IMAGES: bindings.images(),
