@@ -1,11 +1,4 @@
-import fs from "node:fs";
-import path from "node:path";
 import Image from "next/image";
-
-export function publicEducationImageExists(src: string) {
-  const relative = src.replace(/^\//, "");
-  return fs.existsSync(path.join(process.cwd(), "public", relative));
-}
 
 type EducationMediaProps = {
   src: string;
@@ -16,7 +9,7 @@ type EducationMediaProps = {
   sizes?: string;
 };
 
-/** Responsive education imagery with safe fallback when assets are not yet on disk. */
+/** Responsive education imagery (paths under public/ are deployed as static assets). */
 export function EducationMedia({
   src,
   alt,
@@ -25,8 +18,6 @@ export function EducationMedia({
   priority = false,
   sizes = "100vw",
 }: EducationMediaProps) {
-  const hasImage = publicEducationImageExists(src);
-
   return (
     <div
       className={[
@@ -36,18 +27,14 @@ export function EducationMedia({
         .filter(Boolean)
         .join(" ")}
     >
-      {hasImage ? (
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          priority={priority}
-          sizes={sizes}
-          className={["object-cover", imageClassName].filter(Boolean).join(" ")}
-        />
-      ) : (
-        <span className="sr-only">{`Image pending: ${src}`}</span>
-      )}
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        priority={priority}
+        sizes={sizes}
+        className={["object-cover", imageClassName].filter(Boolean).join(" ")}
+      />
     </div>
   );
 }

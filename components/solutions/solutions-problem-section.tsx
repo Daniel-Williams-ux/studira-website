@@ -1,13 +1,6 @@
-import fs from "node:fs";
-import path from "node:path";
 import Image from "next/image";
 import { PROBLEM_SECTION } from "@/lib/solutions/content";
 import { SolutionsChapterHeader } from "./solutions-chapter-header";
-
-function publicImageExists(src: string) {
-  const relative = src.replace(/^\//, "");
-  return fs.existsSync(path.join(process.cwd(), "public", relative));
-}
 
 export function SolutionsProblemSection() {
   return (
@@ -39,52 +32,37 @@ export function SolutionsProblemSection() {
               className="m-0 flex min-w-0 w-max max-w-none list-none gap-2 p-0 sm:gap-2.5 lg:grid lg:w-full lg:max-w-full lg:grid-cols-5 lg:gap-2"
               aria-label="From people to better outcomes"
             >
-              {PROBLEM_SECTION.themes.map((theme, index) => {
-                const hasImage = publicImageExists(theme.imagePath);
-
-                return (
-                  <li
-                    key={theme.title}
-                    className="ssl-solutions-reveal-item relative flex w-[6.75rem] shrink-0 flex-col overflow-hidden rounded-sm border border-divider bg-surface sm:w-[7.25rem] lg:w-auto"
-                    style={{ animationDelay: `${80 + index * 50}ms` }}
-                  >
-                    <div
-                      className={[
-                        "relative aspect-[5/6] w-full",
-                        hasImage ? "bg-surface-accent" : "bg-[color-mix(in_srgb,var(--ssl-cool-grey)_14%,var(--ssl-off-white))]",
-                      ].join(" ")}
+              {PROBLEM_SECTION.themes.map((theme, index) => (
+                <li
+                  key={theme.title}
+                  className="ssl-solutions-reveal-item relative flex w-[6.75rem] shrink-0 flex-col overflow-hidden rounded-sm border border-divider bg-surface sm:w-[7.25rem] lg:w-auto"
+                  style={{ animationDelay: `${80 + index * 50}ms` }}
+                >
+                  <div className="relative aspect-[5/6] w-full bg-surface-accent">
+                    <Image
+                      src={theme.imagePath}
+                      alt={theme.imageAlt}
+                      fill
+                      sizes="(min-width: 1024px) 12vw, 28vw"
+                      className="object-cover object-center"
+                    />
+                  </div>
+                  <div className="flex flex-1 flex-col gap-0.5 px-2 py-2 sm:px-2.5 sm:py-2.5">
+                    <p className="text-[0.8125rem] font-semibold leading-tight">{theme.title}</p>
+                    <p className="text-[0.6875rem] leading-snug text-text-secondary">
+                      {theme.description}
+                    </p>
+                  </div>
+                  {index < PROBLEM_SECTION.themes.length - 1 ? (
+                    <span
+                      className="pointer-events-none absolute -right-1.5 top-[42%] z-[1] hidden text-accent lg:inline"
+                      aria-hidden="true"
                     >
-                      {hasImage ? (
-                        <Image
-                          src={theme.imagePath}
-                          alt={theme.imageAlt}
-                          fill
-                          sizes="(min-width: 1024px) 12vw, 28vw"
-                          className="object-cover object-center"
-                        />
-                      ) : (
-                        <span className="sr-only">
-                          {`Approved photograph pending: ${theme.imagePath}`}
-                        </span>
-                      )}
-                    </div>
-                    <div className="flex flex-1 flex-col gap-0.5 px-2 py-2 sm:px-2.5 sm:py-2.5">
-                      <p className="text-[0.8125rem] font-semibold leading-tight">{theme.title}</p>
-                      <p className="text-[0.6875rem] leading-snug text-text-secondary">
-                        {theme.description}
-                      </p>
-                    </div>
-                    {index < PROBLEM_SECTION.themes.length - 1 ? (
-                      <span
-                        className="pointer-events-none absolute -right-1.5 top-[42%] z-[1] hidden text-accent lg:inline"
-                        aria-hidden="true"
-                      >
-                        →
-                      </span>
-                    ) : null}
-                  </li>
-                );
-              })}
+                      →
+                    </span>
+                  ) : null}
+                </li>
+              ))}
             </ol>
           </div>
         </div>
