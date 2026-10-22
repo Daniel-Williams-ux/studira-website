@@ -1,14 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import {
-  HEALTHCARE_EMR_DASHBOARD_IMAGE_PATH,
-  HEALTHCARE_EMR_PATIENTS_IMAGE_PATH,
-} from "@/components/products/healthcare-product-visual";
+  STUDIRA_EMR_OPERATIONS_DASHBOARD_HEIGHT,
+  STUDIRA_EMR_OPERATIONS_DASHBOARD_PATH,
+  STUDIRA_EMR_OPERATIONS_DASHBOARD_WIDTH,
+} from "@/lib/products/emr-assets";
 import { REAL_WORLD_EVIDENCE } from "@/lib/solutions/content";
 import { SolutionsChapterHeader } from "./solutions-chapter-header";
-
-const EMR_IMAGE_WIDTH = 1864;
-const EMR_IMAGE_HEIGHT = 1001;
 
 export function SolutionsEvidenceSection() {
   return (
@@ -18,8 +16,8 @@ export function SolutionsEvidenceSection() {
       data-ssl-solutions-reveal
     >
       <div className="ssl-container ssl-solutions-chapter ssl-solutions-await">
-        <div className="grid min-w-0 gap-6 md:grid-cols-2 lg:grid-cols-[minmax(0,0.3fr)_minmax(0,0.38fr)_minmax(0,0.32fr)] lg:items-start lg:gap-5 xl:gap-6">
-          <div className="ssl-solutions-copy flex min-w-0 flex-col gap-3 md:col-span-2 lg:col-span-1">
+        <div className="grid min-w-0 gap-6 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,0.58fr)] lg:items-start lg:gap-8 xl:gap-10">
+          <div className="ssl-solutions-copy flex min-w-0 flex-col gap-3">
             <SolutionsChapterHeader
               id="solutions-evidence-heading"
               index={REAL_WORLD_EVIDENCE.index}
@@ -45,43 +43,24 @@ export function SolutionsEvidenceSection() {
             </Link>
           </div>
 
-          <figure className="ssl-solutions-reveal-item m-0 min-w-0 lg:col-span-1">
-            <div className="overflow-hidden rounded-sm border border-line-strong bg-surface-dark">
+          <figure className="ssl-solutions-reveal-item m-0 min-w-0">
+            <div className="overflow-hidden rounded-sm border border-line-strong bg-surface">
               <Image
-                src={HEALTHCARE_EMR_PATIENTS_IMAGE_PATH}
-                alt="Healthcare management platform patient registration screen"
-                width={EMR_IMAGE_WIDTH}
-                height={EMR_IMAGE_HEIGHT}
-                sizes="(min-width: 1024px) 32vw, 100vw"
+                src={STUDIRA_EMR_OPERATIONS_DASHBOARD_PATH}
+                alt="Studira Systems EMR operations dashboard"
+                width={STUDIRA_EMR_OPERATIONS_DASHBOARD_WIDTH}
+                height={STUDIRA_EMR_OPERATIONS_DASHBOARD_HEIGHT}
+                sizes="(min-width: 1024px) 42vw, 100vw"
                 className="block h-auto w-full object-contain object-top"
               />
             </div>
             <figcaption className="mt-1.5 space-y-1">
               <p className="font-mono text-[0.5625rem] font-medium uppercase tracking-[0.12em] text-foreground/55 sm:text-[0.625rem]">
-                {REAL_WORLD_EVIDENCE.captions.primary}
+                {REAL_WORLD_EVIDENCE.caption.label}
               </p>
               <p className="text-[0.75rem] leading-snug text-text-secondary">
-                {REAL_WORLD_EVIDENCE.captions.patient}
+                {REAL_WORLD_EVIDENCE.caption.body}
               </p>
-            </figcaption>
-          </figure>
-
-          <figure
-            className="ssl-solutions-reveal-item m-0 min-w-0 lg:col-span-1"
-            style={{ animationDelay: "120ms" }}
-          >
-            <div className="overflow-hidden rounded-sm border border-line-strong bg-surface">
-              <Image
-                src={HEALTHCARE_EMR_DASHBOARD_IMAGE_PATH}
-                alt="Operational dashboard within the healthcare management platform"
-                width={EMR_IMAGE_WIDTH}
-                height={EMR_IMAGE_HEIGHT}
-                sizes="(min-width: 1024px) 18vw, 50vw"
-                className="block h-auto w-full object-contain object-top"
-              />
-            </div>
-            <figcaption className="mt-1.5 text-[0.75rem] leading-snug text-text-secondary">
-              {REAL_WORLD_EVIDENCE.captions.organisation}
             </figcaption>
           </figure>
         </div>

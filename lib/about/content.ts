@@ -72,16 +72,16 @@ export const ABOUT_LEADERSHIP = {
   },
   beauty: {
     name: "Beauty Nunyiegia, PHRi, ACIHRM",
-    role: "Proposed Chief Operating Officer (COO)",
+    role: "Human Resources Specialist",
     badges: ["HR Leadership", "People Operations", "Talent Acquisition"],
     summary:
-      "A Human Resources professional with experience in HR strategy, HR operations, talent acquisition, employee relations, workforce planning and performance management. She leads HR for a 74-employee healthcare organisation, has recruited and onboarded more than 100 employees, and supervises 15 staff.",
+      "A Human Resources professional with experience in HR strategy, HR operations, talent acquisition, employee relations, workforce planning and performance management.",
     capabilities: [
       { label: "HR Strategy & Operations", icon: "people" as const },
       { label: "Talent Acquisition", icon: "talent" as const },
       { label: "Employee Relations", icon: "relations" as const },
       { label: "HR Systems & Compliance", icon: "compliance" as const },
     ],
-    imageAlt: "Beauty Nunyiegia, proposed Chief Operating Officer of Studira Systems Limited",
+    imageAlt: "Beauty Nunyiegia, Human Resources Specialist at Studira Systems Limited",
   },
 } as const;

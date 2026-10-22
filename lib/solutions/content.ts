@@ -173,15 +173,14 @@ export const REAL_WORLD_EVIDENCE = {
   label: "REAL-WORLD EVIDENCE",
   title: "Engineering around real operational requirements.",
   paragraphs: [
-    "Our work includes a healthcare management platform engineered for BIO Dental — supporting patient operations, clinical workflows, and organisational management within one system.",
+    "Our work includes Studira Systems EMR — a healthcare management system built by Studira Systems — supporting patient operations, clinical workflows, and organisational management within one system.",
     "The platform reflects how a real clinic operates: registration, records, appointments, and day-to-day operational visibility.",
   ],
   link: { href: "/products", label: "Learn more about our work" },
-  captions: {
-    primary: "Patient registration and clinical workflow",
-    patient: "Patient operations: real patient management workflows.",
-    organisation:
-      "Organisational operations: operational dashboard and system management.",
+  caption: {
+    label: "Studira Systems EMR · operations dashboard",
+    body:
+      "Patient operations, clinical workflows and organisational management in one system.",
   },
 } as const;
 

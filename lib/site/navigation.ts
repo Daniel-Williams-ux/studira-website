@@ -38,7 +38,7 @@ export const footerNav = {
     { href: "/education", label: "Education" },
   ],
   legal: [
-    { label: "Privacy", placeholder: true },
-    { label: "Terms", placeholder: true },
+    { href: "/privacy", label: "Privacy" },
+    { href: "/terms", label: "Terms" },
   ],
 } as const;

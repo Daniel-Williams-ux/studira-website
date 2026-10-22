@@ -25,6 +25,8 @@ const inputErrorClass = "border-[color-mix(in_srgb,#c45_55%,var(--divider))]";
 
 const labelClass = "mb-1.5 block ssl-type-label text-foreground";
 
+const requiredMarkClass = "ml-0.5 font-semibold text-[#B42318]";
+
 const submitClass =
   "group inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-md bg-accent px-6 ssl-type-label text-accent-foreground motion-safe:transition-[background-color,opacity] motion-safe:duration-fast hover:bg-accent/92 active:bg-accent/85 focus-visible:ssl-focus-ring disabled:cursor-not-allowed disabled:opacity-70 sm:w-auto sm:min-w-[12rem]";
 
@@ -234,7 +236,8 @@ export function ContactEnquiryForm() {
         <div className="grid min-w-0 grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-4">
           <div className="min-w-0">
             <label htmlFor={nameId} className={labelClass}>
-              Full name <span className="text-accent" aria-hidden="true">*</span>
+              Full name
+              <span className={requiredMarkClass} aria-hidden="true">*</span>
             </label>
             <input
               id={nameId}
@@ -258,7 +261,8 @@ export function ContactEnquiryForm() {
 
           <div className="min-w-0">
             <label htmlFor={emailId} className={labelClass}>
-              Work email <span className="text-accent" aria-hidden="true">*</span>
+              Work email
+              <span className={requiredMarkClass} aria-hidden="true">*</span>
             </label>
             <input
               id={emailId}
@@ -301,7 +305,8 @@ export function ContactEnquiryForm() {
 
         <div className="min-w-0">
           <label htmlFor={enquiryId} className={labelClass}>
-            What can we help with? <span className="text-accent" aria-hidden="true">*</span>
+            What can we help with?
+            <span className={requiredMarkClass} aria-hidden="true">*</span>
           </label>
           <select
             id={enquiryId}
@@ -342,7 +347,7 @@ export function ContactEnquiryForm() {
         <div className="min-w-0">
           <label htmlFor={messageId} className={labelClass}>
             Tell us about the problem or opportunity…{" "}
-            <span className="text-accent" aria-hidden="true">*</span>
+            <span className={requiredMarkClass} aria-hidden="true">*</span>
           </label>
           <textarea
             id={messageId}
