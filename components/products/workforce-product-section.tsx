@@ -19,12 +19,6 @@ export function WorkforceProductSection() {
             <p className="mt-1 font-mono text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-foreground/65">
               HR · WORKFORCE · ORGANISATIONAL OPERATIONS
             </p>
-            <p className="mt-2 inline-flex w-fit items-center border border-accent/40 bg-accent/10 px-2.5 py-1 font-mono text-[0.625rem] font-medium uppercase tracking-[0.12em] text-foreground">
-              IN DEVELOPMENT
-            </p>
-            <p className="mt-2 ssl-type-body-sm text-text-secondary">
-              The product identity/name is not final.
-            </p>
             <h2
               id="workforce-product-heading"
               className="ssl-products-heading mt-3 max-w-[18ch] text-balance"
