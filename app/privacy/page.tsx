@@ -4,6 +4,7 @@ import { pageMetadata } from "@/lib/site/metadata";
 
 export const metadata = pageMetadata(
   "Privacy Policy",
+  "/privacy",
   "How Studira Systems Limited handles information collected through its corporate website and contact form.",
 );
 

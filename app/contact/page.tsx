@@ -3,6 +3,7 @@ import { pageMetadata, site } from "@/lib/site/metadata";
 
 export const metadata = pageMetadata(
   "Contact",
+  "/contact",
   `Start a conversation with ${site.companyName} about technology solutions, products and managed infrastructure.`,
 );
 

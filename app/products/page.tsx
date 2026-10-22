@@ -13,6 +13,7 @@ import { pageMetadata } from "@/lib/site/metadata";
 
 export const metadata = pageMetadata(
   "Products",
+  "/products",
   "Technology products from Studira Systems — healthcare and workforce platforms built around real organisational problems.",
 );
 

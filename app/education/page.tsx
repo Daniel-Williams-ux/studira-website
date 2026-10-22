@@ -10,6 +10,7 @@ import { pageMetadata } from "@/lib/site/metadata";
 
 export const metadata = pageMetadata(
   "Education",
+  "/education",
   `${sslBrand.businessModel[2]} — practical technology learning with guidance from Studira Systems.`,
 );
 

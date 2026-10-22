@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Inter } from "next/font/google";
 import { SiteShell } from "@/components/layout/site-shell";
+import { SiteStructuredData } from "@/components/seo/site-structured-data";
 import { rootMetadata } from "@/lib/site/metadata";
 import "./globals.css";
 
@@ -29,6 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         className="flex min-h-full flex-col overflow-x-hidden bg-surface font-sans text-foreground"
         suppressHydrationWarning
       >
+        <SiteStructuredData />
         <SiteShell>{children}</SiteShell>
       </body>
     </html>

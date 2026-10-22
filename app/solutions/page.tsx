@@ -14,6 +14,7 @@ import { pageMetadata } from "@/lib/site/metadata";
 
 export const metadata = pageMetadata(
   "Solutions",
+  "/solutions",
   `${sslBrand.positioning} ${sslBrand.promise}`,
 );
 

@@ -4,6 +4,7 @@ import { pageMetadata } from "@/lib/site/metadata";
 
 export const metadata = pageMetadata(
   "About",
+  "/about",
   `${sslBrand.positioning} Learn how Studira Systems Limited builds products and managed technology solutions.`,
 );
 

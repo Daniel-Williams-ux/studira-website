@@ -4,6 +4,7 @@ import { pageMetadata } from "@/lib/site/metadata";
 
 export const metadata = pageMetadata(
   "Terms of Use",
+  "/terms",
   "Terms governing use of the Studira Systems Limited corporate website.",
 );
 
